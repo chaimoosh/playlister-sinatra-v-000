@@ -37,10 +37,10 @@ class SongsController < ApplicationController
   post '/songs/:slug' do
     #binding.pry
     @song = Song.find_by_slug(params[:slug])
-    if !params["Artist Name"].empty?
+    #if !params["Artist Name"].empty?
       @artist = Artist.find_or_create_by(:name => params["Artist Name"])
       @song.artist = @artist
-    end
+    #end
     @song.genre_ids = params["genres"]
     @song.save
     flash[:message] = "Successfully updated song."
