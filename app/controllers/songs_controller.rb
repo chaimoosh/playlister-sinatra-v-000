@@ -36,11 +36,12 @@ class SongsController < ApplicationController
 
   post '/songs/:slug' do
     binding.pry
+    @song = Song.find_by_slug(params[:slug])
     if !params["Artist Name"].empty?
       @new_artist = Artist.update(:name => params["Artist Name"])
       @song.artist = @new_artist
     end
     flash[:message] = "Successfully updated song."
-    redirect "/songs/#{@song.slug}"
+    redirect "/songs/#{params[:slug]}"
   end
 end
