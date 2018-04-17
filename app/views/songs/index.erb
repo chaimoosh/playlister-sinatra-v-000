@@ -1,0 +1,5 @@
+<% @song_list.each do |song| %>
+<% binding.pry %>
+  <%= song.name %>
+  <a href="/songs/<%=song.slug%>"></a>
+<% end %>
