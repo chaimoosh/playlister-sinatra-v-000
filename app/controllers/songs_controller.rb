@@ -31,7 +31,13 @@ class SongsController < ApplicationController
 
   get '/songs/:slug' do
     @sluggish = Song.find_by_slug(params[:slug])
-  #binding.pry
     erb :'/songs/show'
   end
+
+  post '/songs/:slug' do 
+    if !params["Artist Name"].empty?
+      @new_artist = Artist.update(:name => params["Artist Name"])
+      @song.artist = @new_artist
+    end
+  end  
 end
