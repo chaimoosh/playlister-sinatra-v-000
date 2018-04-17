@@ -4,7 +4,7 @@
 <form action="/songs/<%=@sluggish.slug%>" method="post">
   <input type="text" name="Name" value="Name">
   <%= @sluggish.artist.name %>
-  <input type="text" name="Artist Name" value="@sluggish.artist.name">
+  <input type="text" name="Artist Name" value="<%=@sluggish.artist.name%>">
   <% Genre.all.each do |genre| %>
   <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>">
 <% end %>
