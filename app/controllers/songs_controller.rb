@@ -17,11 +17,11 @@ class SongsController < ApplicationController
       @song.artist = @new_artist
     end
       binding.pry
-      @song.genres = params["genres"]
+      @song.genre_ids = params["genres"]
 
 
     @song.save
-
+    
     redirect "/songs/#{@song.slug}"
   end
 
