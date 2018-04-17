@@ -8,3 +8,7 @@
   <%= genre.name %>
   <a href="/genres/<%= genre.slug %>"></a>
 <% end %>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
