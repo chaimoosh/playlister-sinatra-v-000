@@ -40,6 +40,7 @@ class SongsController < ApplicationController
     if !params["Artist Name"].empty?
       Artist.update(:name => params["Artist Name"])
     end
+    @song.genre_ids = params["genres"]
     flash[:message] = "Successfully updated song."
     redirect "/songs/#{@song.slug}"
   end
