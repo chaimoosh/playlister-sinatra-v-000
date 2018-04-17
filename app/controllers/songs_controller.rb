@@ -15,10 +15,10 @@ class SongsController < ApplicationController
     if !params["Artist Name"].empty?
       @new_artist = Artist.find_or_create_by(:name => params["Artist Name"])
       @song.artist = @new_artist
-    elsif !params["genres"].empty?
+    end 
       @genre = Genre.find_by_id(params["genres"])
       @song.genres = @genre
-    end
+  
     binding.pry
     @song.save
 
