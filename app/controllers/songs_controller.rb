@@ -24,6 +24,11 @@ class SongsController < ApplicationController
     redirect "/songs/#{@song.slug}"
   end
 
+  get '/songs/:slug/edit' do 
+    @sluggish = Song.find_by_slug(params[:slug])
+    erb :'/songs/edit'
+  end 
+  
   get '/songs/:slug' do
     @sluggish = Song.find_by_slug(params[:slug])
   #binding.pry
