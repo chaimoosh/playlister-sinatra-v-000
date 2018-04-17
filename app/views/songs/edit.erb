@@ -2,7 +2,7 @@
 <% #binding.pry %>
 <%= @sluggish.name %>
 <form action="/songs/<%=@sluggish.slug%>" method="post">
-  <input type="text" name="Name" value="Name">
+  <input type="text" name="Name" value="<%= @sluggish.name %>">
   <%= @sluggish.artist.name %>
   <input type="text" name="Artist Name" value="<%=@sluggish.artist.name%>">
   <% Genre.all.each do |genre| %>
