@@ -11,7 +11,7 @@ class SongsController < ApplicationController
 
   post '/songs' do
     @song = Song.create(:name => params["Name"])
-    
+
     if !params["Artist Name"].empty?
       @new_artist = Artist.find_or_create_by(:name => params["Artist Name"])
       @song.artist = @new_artist
@@ -21,13 +21,13 @@ class SongsController < ApplicationController
     end
     binding.pry
     @song.save
-    
+
     redirect "/songs/#{@song.slug}"
   end
 
   get '/songs/:slug' do
     @sluggish = Song.find_by_slug(params[:slug])
-  binding.pry
+  #binding.pry
     erb :'/songs/show'
   end
 end
