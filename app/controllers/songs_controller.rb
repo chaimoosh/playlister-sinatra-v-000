@@ -35,7 +35,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs/:slug' do
-    #binding.pry
+    binding.pry
     @song = Song.find_by_slug(params[:slug])
     if !params["Artist Name"].empty?
       Artist.update(:name => params["Artist Name"])
