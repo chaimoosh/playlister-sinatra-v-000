@@ -1,5 +1,5 @@
 <%= @sluggish.name %>
-<% #binding.pry %>
+<% binding.pry %>
 <% if @sluggish.artist.name != nil %>
 <%= @sluggish.artist.name %>
 <a href="/artists/<%= @sluggish.artist.slug %>"></a>
