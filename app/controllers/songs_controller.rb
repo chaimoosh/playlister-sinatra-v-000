@@ -18,9 +18,9 @@ class SongsController < ApplicationController
     end
       @song.genres = params["genres"]
 
-    #binding.pry
+    
     @song.save
-
+    binding.pry
     redirect "/songs/#{@song.slug}"
   end
 
