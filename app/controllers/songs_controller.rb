@@ -34,10 +34,11 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
-  post '/songs/:slug' do 
+  post '/songs/:slug' do
     if !params["Artist Name"].empty?
       @new_artist = Artist.update(:name => params["Artist Name"])
       @song.artist = @new_artist
     end
-  end  
+    flash[:message] = "Successfully updated song."
+  end
 end
