@@ -17,7 +17,7 @@ class SongsController < ApplicationController
       @song.artist = @new_artist
     elsif !params["genres"].empty?
       @genre = Genre.find_by_id(params["genres"])
-      @song.genre = @genre
+      @song.genres = @genre
     end
     @song.save
 
