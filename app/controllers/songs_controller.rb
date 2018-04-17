@@ -26,7 +26,7 @@ class SongsController < ApplicationController
 
   get '/songs/:slug' do
     @sluggish = Song.find_by_slug(params[:slug])
-  #binding.pry
+  binding.pry
     erb :'/songs/show'
   end
 end
